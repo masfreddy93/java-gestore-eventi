@@ -91,11 +91,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		
-		return getData().format(formatter) + " - " + getTitolo()
-				+ "\n\n   Roba mia: "
-				+ "\n   Data: " + getData()
-				+ "\n   Posti totali: " + getNumeroPostiTot()
-				+ "\n   Posti prenotati: " + getNumeroPostiPrenotati();
+		return getData().format(formatter) + " - " + getTitolo();
 	}
 	
 	
