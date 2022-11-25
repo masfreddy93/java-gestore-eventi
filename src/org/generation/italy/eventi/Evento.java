@@ -26,7 +26,12 @@ public class Evento {
 		return titolo;
 	}
 
-	public void setTitolo(String titolo) {
+	public void setTitolo(String titolo) throws Exception {
+		
+		if(titolo.length() < 2) {
+			
+			throw new Exception("Il nome deve contenere almeno 2 caratteri");
+		}
 		this.titolo = titolo;
 	}
 
