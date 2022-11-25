@@ -83,29 +83,7 @@ public class ProgrammEventi {
 		this.eventi.clear();
 	}
 	
-//	public String sortByDate() {
-//		
-//		LocalDate dataEvento;
-//		List<LocalDate> datesOfEventsToOrder = new ArrayList<>();
-//		LocalDate[] dateVar = new LocalDate[this.eventi.size()];
-//		
-//		
-//		for(int i = 0; i < this.eventi.size(); i++) {
-//			
-////			dataEvento = this.eventi.get(i).getData();
-//			//array con tutte le varie date
-////			dateVar[i] = dataEvento;
-//			System.out.println("ciao");
-//		}
-//		
-////		datesOfEventsToOrder = Arrays.asList(dateVar);
-////		datesOfEventsToOrder.sort(new DateComparator());
-//		
-//		return this.titolo 
-//				+ "\n" + Arrays.toString(dateVar)
-//				+ datesOfEventsToOrder
-//				;
-//	}
+
 	
 	public String sortByDate() {
 		
