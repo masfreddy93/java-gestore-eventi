@@ -1,8 +1,6 @@
 package org.generation.italy.eventi;
 
 import java.math.BigDecimal;
-//import java.time.LocalDate;
-//import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -35,14 +33,6 @@ public class Main {
 		int mese = sc.nextInt();
 		System.out.print("Inserire anno evento: ");
 		int anno = sc.nextInt();
-//		String[] dataStrArr = dataStr.split("-");
-//		System.out.println(Arrays.toString(dataStrArr));
-//		int[] dataIntArr = new int[3];
-//		for(int i = 0; i < dataStrArr.length; i++) {
-//			int el = Integer.parseInt(dataStrArr[i]);
-//			dataIntArr[i] = el;
-//		}
-//		LocalDate data = LocalDate.of(dataIntArr[0], dataIntArr[1], dataIntArr[2]);
 		System.out.print("Inserire numero posti totali: ");
 		int numeroPostiTotali = sc.nextInt();
 		
@@ -135,10 +125,6 @@ public class Main {
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-//		} finally {
-//			
-//			System.out.println("END");
-//		}
 		
 		
 		sc.close();
