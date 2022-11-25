@@ -105,15 +105,15 @@ public class ProgrammEventi {
 		
 		ProgrammEventi p = new ProgrammEventi("titolone");
 //		System.out.println(p.getTitolo());
-		Evento e1 = new Evento("panino", LocalDate.of(2022, 11, 26), 200);
+		Evento e1 = new Evento("panino", 26, 11, 2022, 200);
 		p.addEvent(e1);
-		Evento e3 = new Evento("pinocchio", LocalDate.of(2023, 12, 28), 100);
+		Evento e3 = new Evento("pinocchio", 28, 12, 2022, 100);
 		p.addEvent(e3);
-		Evento e4 = new Evento("topo gigio", LocalDate.of(2023, 12, 28), 20);
+		Evento e4 = new Evento("topo gigio", 28, 12, 2022, 20);
 		p.addEvent(e4);
-		Evento e6 = new Evento("anacleto", LocalDate.of(2028, 11, 12), 10);
+		Evento e6 = new Evento("anacleto", 12, 11, 2022, 10);
 		p.addEvent(e6);
-		Evento e5 = new Evento("bombis", LocalDate.of(2022, 11, 26), 10);
+		Evento e5 = new Evento("bombis", 26, 11, 2022, 10);
 		p.addEvent(e5);
 		
 		System.out.println(p.getEventi());

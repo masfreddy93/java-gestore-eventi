@@ -13,10 +13,10 @@ public class Evento {
 	private int numeroPostiPrenotati;
 	
 	
-	public Evento(String titolo, LocalDate data, int numeroPostiTot) throws Exception {
+	public Evento(String titolo, int d, int mo, int y, int numeroPostiTot) throws Exception {
 		
 		setTitolo(titolo);
-		setData(data);
+		setData(d, mo, y);
 		setNumeroPostiTot(numeroPostiTot);
 		this.numeroPostiPrenotati = 0;
 	}
@@ -34,7 +34,14 @@ public class Evento {
 		return data;
 	}
 
-	public void setData(LocalDate data) throws Exception {
+	public void setData(int d, int mo, int y) throws Exception {
+		
+		if(d < 0 || d > 31 || mo < 0 || mo > 12 || y > 2030) {
+			
+			throw new Exception("Valore non consentito");
+		}	
+		
+		LocalDate data = LocalDate.of(y, mo, d);
 		
 		LocalDate oggi = LocalDate.now();
 		if(oggi.isAfter(data)) {

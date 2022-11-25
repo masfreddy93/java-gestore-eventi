@@ -2,7 +2,7 @@ package org.generation.italy.eventi;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.time.LocalDate;
+//import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
@@ -15,9 +15,9 @@ public class Concerto extends Evento {
 	private BigDecimal prezzo;
 	
 	
-	public Concerto(String titolo, LocalDate data, int numeroPostiTot, int h, int m, BigDecimal prezzo) throws Exception {
+	public Concerto(String titolo, int d, int mo, int y, int numeroPostiTot, int h, int m, BigDecimal prezzo) throws Exception {
 		
-		super(titolo, data, numeroPostiTot);
+		super(titolo, d, mo, y, numeroPostiTot);
 		
 		setOra(h, m);
 		setPrezzo(prezzo);
@@ -27,10 +27,14 @@ public class Concerto extends Evento {
 		return ora;
 	}
 
-	public void setOra(int h, int m) {
+	public void setOra(int h, int m) throws Exception {
+		
+		if(h < 0 || h > 24 || m < 0 || m > 60) {
+			
+			throw new Exception("Valore non consentito");
+		}	
 		
 		LocalTime hour = LocalTime.of(h, m);
-		
 		this.ora = hour;
 	}
 
@@ -38,7 +42,13 @@ public class Concerto extends Evento {
 		return prezzo;
 	}
 
-	public void setPrezzo(BigDecimal prezzo) {
+	public void setPrezzo(BigDecimal prezzo) throws Exception {
+		
+		if(prezzo.compareTo(new BigDecimal(0)) == -1) {
+			
+			throw new Exception("Valore non consentito");
+		}
+		
 		this.prezzo = prezzo;
 	}
 	
