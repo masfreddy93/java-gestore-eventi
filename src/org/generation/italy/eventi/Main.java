@@ -14,13 +14,14 @@ public class Main {
 		System.out.println("ProgrammaEventi");
 		
 		ProgrammEventi p = new ProgrammEventi("MyEvents");
-		Evento e1 = new Evento("panino", 26, 12, 2022, 200);
-		Evento e3 = new Evento("pinocchio", 28, 12, 2022, 100);
-		Evento e4 = new Evento("topo gigio", 28, 12, 2022, 20);
-		Evento e6 = new Evento("anacleto", 12, 12, 2028, 10);
-		Evento e5 = new Evento("bombis", 26, 11, 2022, 10);
 
 		try {
+			//prove varie stampate a schermo
+			Evento e1 = new Evento("panino", 26, 12, 2022, 200);
+			Evento e3 = new Evento("pinocchio", 28, 12, 2022, 100);
+			Evento e4 = new Evento("topo gigio", 28, 12, 2022, 20);
+			Evento e6 = new Evento("anacleto", 12, 12, 2028, 10);
+			Evento e5 = new Evento("bombis", 26, 10, 2023, -5);
 			p.addEvent(e5);
 			p.addEvent(e1);
 			p.addEvent(e3);
@@ -29,12 +30,9 @@ public class Main {
 			
 //			System.out.println(p.getEventi());
 			
-			
 			System.out.println("\nLista di eventi in data '28-12-2022: \n" +p.eventsInDate(LocalDate.of(2022, 12, 28)));
 			
-			
 			System.out.println("\nNr. eventi presenti: " + p.countEvents());
-			
 			
 			System.out.println("\n" + p.sortByDate());
 			
