@@ -43,13 +43,13 @@ public class Evento {
 		
 		if(d < 0 || d > 31 || mo < 0 || mo > 12 || y > 2030) {
 			
-			throw new Exception("Valore non consentito");
+			throw new Exception("Valore non consentito (data non valida)");
 		}	
 		
 		LocalDate data = LocalDate.of(y, mo, d);
 		
-		LocalDate oggi = LocalDate.now();
-		if(oggi.isAfter(data)) {
+		
+		if(LocalDate.now().isAfter(data)) {
 			throw new Exception("La data inserita non è valida in quanto già passata");
 		}
 		
@@ -80,7 +80,7 @@ public class Evento {
 		
 		if(getNumeroPostiPrenotati() >= getNumeroPostiTot() || LocalDate.now().isAfter(data)) {
 			
-			throw new Exception("Posti terminati");
+			throw new Exception("Impossibile inserire la quantità digitata");
 		}
 		
 		return this.numeroPostiPrenotati += 1;
@@ -90,7 +90,7 @@ public class Evento {
 		
 		if(getNumeroPostiPrenotati() <= 0 || LocalDate.now().isAfter(data)) {
 			
-			throw new Exception("Non sono presenti prenotazioni");
+			throw new Exception("Impossibile disdire la quantità digitata");
 		}
 		
 		return this.numeroPostiPrenotati -= 1;

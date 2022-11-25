@@ -50,7 +50,7 @@ public class ProgrammEventi {
 	public void addEvent(Evento e) {
 		
 //		String titolo = e.getTitolo();
-//		LocalDate data = e.getData();           //questi sono per i controlli
+//		LocalDate data = e.getData();                //questi sono per i controlli
 //		int capienza = e.getNumeroPostiTot();
 //		int prenotazioni = e.getNumeroPostiPrenotati();
 		
@@ -104,13 +104,13 @@ public class ProgrammEventi {
 		
 		ProgrammEventi p = new ProgrammEventi("titolone");
 //		System.out.println(p.getTitolo());
-		Evento e1 = new Evento("panino", 26, 11, 2022, 200);
+		Evento e1 = new Evento("panino", 26, 12, 2022, 200);
 		p.addEvent(e1);
 		Evento e3 = new Evento("pinocchio", 28, 12, 2022, 100);
 		p.addEvent(e3);
 		Evento e4 = new Evento("topo gigio", 28, 12, 2022, 20);
 		p.addEvent(e4);
-		Evento e6 = new Evento("anacleto", 12, 11, 2022, 10);
+		Evento e6 = new Evento("anacleto", 12, 12, 2022, 10);
 		p.addEvent(e6);
 		Evento e5 = new Evento("bombis", 26, 11, 2022, 10);
 		p.addEvent(e5);
@@ -122,9 +122,7 @@ public class ProgrammEventi {
 		
 		
 		System.out.println("\nn. eventi presenti: " + p.countEvents());
-	
-//		p.getEventi().sort(new DateComparator());
-//		System.out.println("\nEventi in ordine di data: " + p.getEventi());
+		
 		
 		System.out.println("\n" + p.sortByDate());
 		

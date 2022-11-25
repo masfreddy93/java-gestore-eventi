@@ -30,7 +30,7 @@ public class Concerto extends Evento {
 		
 		if(h < 0 || h > 24 || m < 0 || m > 60) {
 			
-			throw new Exception("Valore non consentito");
+			throw new Exception("Valore non consentito (orario non valido)");
 		}	
 		
 		LocalTime hour = LocalTime.of(h, m);
@@ -45,7 +45,7 @@ public class Concerto extends Evento {
 		
 		if(prezzo.compareTo(new BigDecimal(0)) == -1) {
 			
-			throw new Exception("Valore non consentito");
+			throw new Exception("Valore non consentito (il prezzo deve essere maggiore o uguale a 0)");
 		}
 		
 		this.prezzo = prezzo;
