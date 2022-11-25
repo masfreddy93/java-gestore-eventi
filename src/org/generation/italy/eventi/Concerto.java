@@ -5,6 +5,9 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Concerto extends Evento {
 	
@@ -58,12 +61,15 @@ public class Concerto extends Evento {
 		return result;
 	}
 	
-	
+	//formattazione data
+	DateTimeFormatter formatter = DateTimeFormatter.
+			ofPattern("dd.MM.yyyy HH:mm", Locale.ITALY).withZone(ZoneId.of("Europe/Rome"));
+
 	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return formatDateTime()
+		return formatDateTime().format(formatter).toString().replace("T", " ")
 				+ " - " + getTitolo() 
 				+ " - " + formatPrice() + "€";
 	}
