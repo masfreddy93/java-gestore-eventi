@@ -93,7 +93,7 @@ public class ProgrammEventi {
 		for(int i = 0; i < this.eventi.size(); i++) {
 			
 			String toConcat = this.eventi.get(i).toString();
-			output += "- " + toConcat + "\n";
+			output += "○ " + toConcat + "\n";
 		}
 		
 		
