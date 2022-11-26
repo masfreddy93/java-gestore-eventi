@@ -21,7 +21,7 @@ public class Main {
 			Evento e3 = new Evento("pinocchio", 28, 12, 2022, 100);
 			Evento e4 = new Evento("topo gigio", 28, 12, 2022, 20);
 			Evento e6 = new Evento("anacleto", 12, 12, 2028, 10);
-			Evento e5 = new Evento("panino", 26, 12, 2022, 55);
+			Evento e5 = new Evento("panino", 26, 12, 2022, 200);
 			peu.addEvent(e5);
 			peu.addEvent(e1);
 			peu.addEvent(e3);
@@ -38,8 +38,14 @@ public class Main {
 			
 			System.out.println("Eventi EQUALS a 'panino-26.12.2022': " +peu.equals(e1));
 			
-			System.out.println("\nRisultato test clear: " + peu.clearEvents());
-			System.out.println("Nr. eventi presenti dopo il clear: " + peu.countEvents());
+//			System.out.println("\nRisultato test clear: " + peu.clearEvents());
+//			System.out.println("Nr. eventi presenti dopo il clear: " + peu.countEvents());
+			
+			System.out.println("\n\n\nNUOVI METODI");
+			System.out.println("\nEvento con maggior numero di posti totali: " + peu.getMaxPostiTotaliEvento());
+			System.out.println("I posti sono: " + peu.getMaxPostiTotaliEvento().getNumeroPostiTot());
+			System.out.println("\nEvento con minor numero di posti totali: " + peu.getMinPostiTotaliEvento());
+			System.out.println("I posti sono: " + peu.getMinPostiTotaliEvento().getNumeroPostiTot());
 			
 		} catch(Exception e) {
 			

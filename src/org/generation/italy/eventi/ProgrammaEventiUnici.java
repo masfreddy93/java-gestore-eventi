@@ -1,9 +1,7 @@
 package org.generation.italy.eventi;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class ProgrammaEventiUnici {
@@ -57,9 +55,9 @@ public class ProgrammaEventiUnici {
 		return res;
 	}
 	
-	public List<Evento> equals(Evento e){
+	public Set<Evento> equals(Evento e){
 		
-		List<Evento> equalsEvents = new ArrayList<>();
+		Set<Evento> equalsEvents = new HashSet<>();
 		
 		for(Evento event: this.eventi) {
 			
@@ -86,6 +84,47 @@ public class ProgrammaEventiUnici {
 		this.eventi.clear();
 		return true;
 	}
+	
+	
+	//milestone3
+	//`getMaxPostiTotaliEvento`: restituisce l'evento con il 
+	//numero *massimo* di posti totali
+	
+	public Evento getMaxPostiTotaliEvento() throws Exception {
+		
+		Evento eMax = null;
+		int iMax = Integer.MIN_VALUE;
+		
+		for(Evento e: this.eventi) {
+			
+			if(e.getNumeroPostiTot() > iMax) {
+
+				iMax = e.getNumeroPostiTot();
+				eMax = e;
+			}
+		}
+		
+		return eMax;
+	}
+	
+	public Evento getMinPostiTotaliEvento() throws Exception {
+		
+		Evento eMin = null;
+		int iMin = Integer.MAX_VALUE;
+		
+		for(Evento e: this.eventi) {
+			
+			if(e.getNumeroPostiTot() < iMin) {
+
+				iMin = e.getNumeroPostiTot();
+				eMin = e;
+			}
+		}
+		
+		return eMin;
+	}
+	
+	
 	
 	
 	@Override
