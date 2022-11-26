@@ -1,11 +1,26 @@
 package org.generation.italy.eventi;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ProgrammaEventiUnici {
 
+	public static class TitleComparator implements Comparator<Evento>{
+		
+		public int compare(Evento e1, Evento e2) {
+			
+			if(e1.getTitolo().length() > e2.getTitolo().length()) return -1;
+			
+			return 0;
+		}
+	}
+	
+	
+	
 	private String titolo;
 	private Set<Evento> eventi;
 	
@@ -122,6 +137,26 @@ public class ProgrammaEventiUnici {
 		}
 		
 		return eMin;
+	}
+	
+	
+	//`orderedPrint`: stampa tutti gli eventi in ordine di 
+	// lunghezza del titolo (titolo piu' lungo prima)
+	
+	public String orderedPrint(){
+		
+		ArrayList<Evento> ordList = new ArrayList<>(this.eventi);
+		ordList.sort(new TitleComparator());
+		String output = "Lista ordinata di eventi per lunghezza del nome \n";
+		
+		for(Evento e: ordList) {
+			
+			String toConcat = e.toString();
+			output += "○ " + toConcat + "\n";
+		}
+		
+		return output;
+		
 	}
 	
 	
