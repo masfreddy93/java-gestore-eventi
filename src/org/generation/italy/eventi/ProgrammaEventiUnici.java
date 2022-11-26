@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class ProgrammaEventiUnici {
@@ -14,6 +13,16 @@ public class ProgrammaEventiUnici {
 		public int compare(Evento e1, Evento e2) {
 			
 			if(e1.getTitolo().length() > e2.getTitolo().length()) return -1;
+			
+			return 0;
+		}
+	}
+	
+	public static class DateComparator implements Comparator<Evento>{
+		
+		public int compare(Evento e1, Evento e2) {
+			
+			if(e1.getData().isBefore(e2.getData())) return -1;
 			
 			return 0;
 		}
@@ -157,6 +166,26 @@ public class ProgrammaEventiUnici {
 		
 		return output;
 		
+	}
+	
+	public Evento getFirstEvent() {
+		
+		ArrayList<Evento> ordList = new ArrayList<>(this.eventi);
+		ordList.sort(new DateComparator());
+		
+		Evento e = ordList.get(0);
+		
+		return e;
+	}
+	
+	public Evento getLastEvent() {
+		
+		ArrayList<Evento> ordList = new ArrayList<>(this.eventi);
+		ordList.sort(new DateComparator());
+		
+		Evento e = ordList.get(ordList.size() - 1);
+		
+		return e;
 	}
 	
 	

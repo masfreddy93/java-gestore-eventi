@@ -47,6 +47,8 @@ public class Main {
 			System.out.println("\nEvento con minor numero di posti totali: " + peu.getMinPostiTotaliEvento());
 			System.out.println("I posti sono: " + peu.getMinPostiTotaliEvento().getNumeroPostiTot());
 			System.out.println("\n" + peu.orderedPrint());
+			System.out.println("\nPrimo evento in ordine temporale: " + peu.getFirstEvent());
+			System.out.println("\nUltimo evento in ordine temporale: " + peu.getLastEvent());
 			
 		} catch(Exception e) {
 			
