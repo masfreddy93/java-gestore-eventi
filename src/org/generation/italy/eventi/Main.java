@@ -21,7 +21,7 @@ public class Main {
 			Evento e3 = new Evento("pinocchio", 28, 12, 2022, 100);
 			Evento e4 = new Evento("topo gigio", 28, 12, 2022, 20);
 			Evento e6 = new Evento("anacleto", 12, 12, 2028, 10);
-			Evento e5 = new Evento("bombis", 26, 10, 2023, -5);
+			Evento e5 = new Evento("panino", 26, 12, 2022, 5);
 			p.addEvent(e5);
 			p.addEvent(e1);
 			p.addEvent(e3);
@@ -35,6 +35,8 @@ public class Main {
 			System.out.println("\nNr. eventi presenti: " + p.countEvents());
 			
 			System.out.println("\n" + p.sortByDate());
+			
+			System.out.println("Eventi EQUALS a 'panino-26.12.2022': " +p.equals(e1));
 			
 			p.clearEvents();
 			System.out.println("\nNr. eventi presenti dopo il clear: " + p.countEvents());
