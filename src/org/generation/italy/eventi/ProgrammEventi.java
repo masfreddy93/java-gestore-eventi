@@ -7,6 +7,7 @@ import java.util.List;
 
 public class ProgrammEventi {
 
+	
 	public static class DateComparator implements Comparator<Evento>{
 		
 		public int compare(Evento e1, Evento e2) {
@@ -16,6 +17,7 @@ public class ProgrammEventi {
 			return 0;
 		}
 	}
+	
 	
 	
 	private String titolo;
@@ -47,12 +49,8 @@ public class ProgrammEventi {
 	}
 	
 	
+	
 	public void addEvent(Evento e) {
-		
-//		String titolo = e.getTitolo();
-//		LocalDate data = e.getData();                //questi sono per i controlli
-//		int capienza = e.getNumeroPostiTot();
-//		int prenotazioni = e.getNumeroPostiPrenotati();
 		
 		this.eventi.add((Evento) e);
 	}
@@ -72,10 +70,12 @@ public class ProgrammEventi {
 		return eventsSameDate;
 	}
 	
+	
 	public int countEvents() {
 		
 		return this.eventi.size();
 	}
+	
 	
 	public void clearEvents() {
 		
@@ -83,7 +83,6 @@ public class ProgrammEventi {
 	}
 	
 
-	
 	public String sortByDate() {
 		
 		this.eventi.sort(new DateComparator());

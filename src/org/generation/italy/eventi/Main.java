@@ -76,6 +76,7 @@ public class Main {
 		int numeroPostiTotali = sc.nextInt();
 		
 		Evento e2;
+		
 			
 		try {
 			e2  = new Evento(nome, giorno, mese, anno, numeroPostiTotali);
@@ -118,7 +119,7 @@ public class Main {
 				System.out.println(e2.toString() 
 						+ "\n\nNumeri posti prenotati: " + e2.getNumeroPostiPrenotati()
 						+ "\nNumeri posti totali: " + e2.getNumeroPostiTot()
-					);
+						);
 				
 			}				
 			
@@ -144,7 +145,7 @@ public class Main {
 						}
 						
 						check = 1;
-	
+						
 					} else {
 						
 						System.err.println("Il numero inserito non è valido");
@@ -156,9 +157,9 @@ public class Main {
 				System.out.println(e2.toString() 
 						+ "\n\nNumeri posti prenotati: " + e2.getNumeroPostiPrenotati()
 						+ "\nNumeri posti totali: " + e2.getNumeroPostiTot()
-					);
-			
-			
+						);
+				
+				
 			}
 			
 		}catch (Exception e) {
@@ -166,7 +167,10 @@ public class Main {
 		}
 		
 		
+		
 		sc.close();
+		
+		
 		System.out.println("------------");
 		System.out.println("END");
 	}

@@ -96,12 +96,12 @@ public class Evento {
 		return this.numeroPostiPrenotati -= 1;
 	}
 	
-	//formattazione data
-	DateTimeFormatter formatter = DateTimeFormatter.
-            ofPattern("dd.MM.yyyy",Locale.ITALY).withZone(ZoneId.of("Europe/Rome"));
 	
 	@Override
 	public String toString() {
+		//formattazione data
+		DateTimeFormatter formatter = DateTimeFormatter.
+				ofPattern("dd.MM.yyyy",Locale.ITALY).withZone(ZoneId.of("Europe/Rome"));
 		
 		return getData().format(formatter) + " - " + getTitolo();
 	}

@@ -70,14 +70,14 @@ public class Concerto extends Evento {
 		return result;
 	}
 	
-	//formattazione data
-	DateTimeFormatter formatter = DateTimeFormatter.
-			ofPattern("dd.MM.yyyy HH:mm", Locale.ITALY).withZone(ZoneId.of("Europe/Rome"));
 
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+		//formattazione data
+		DateTimeFormatter formatter = DateTimeFormatter.
+				ofPattern("dd.MM.yyyy HH:mm", Locale.ITALY).withZone(ZoneId.of("Europe/Rome"));
+		
 		return formatDateTime().format(formatter).toString().replace("T", " ")
 				+ " - " + getTitolo() 
 				+ " - " + formatPrice() + "€";
